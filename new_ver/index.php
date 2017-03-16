@@ -5,6 +5,7 @@ $member_id = $_SESSION['member_id'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Video Learning</title>
 <meta name="keywords" content="" />
@@ -14,6 +15,30 @@ $member_id = $_SESSION['member_id'];
 <!---<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>---->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2/swfobject.js"></script>
+
+
+<script>//判斷目前裝置是否為手機，若是則跳到行動版網址
+var urlPath ='index';
+var urlHref = location.href;
+
+// 如果是手機端訪問首頁， 跳至行動手機版網頁
+var arrUrl_webgolds = ['index','post'];  // 緩存頁面做跳轉，除特殊首頁/
+for(i in arrUrl_webgolds) {
+  if(arrUrl_webgolds[i] == urlPath) {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { //使用javascript回傳使用者瀏覽裝置的版本
+      urlHref = urlHref.replace(urlPath,'m/'+urlPath);
+	  if(location.pathname === '/') {//特殊情況首頁
+        urlHref='/m'
+      }
+	  urlHref+='m'; //直接轉到行動版首頁
+      window.location = urlHref; //轉址
+      break;
+    }
+
+  }
+}
+</script>
+
 <!--[if IE]>
 <style type="text/css">
 #sidebar #calendar {
@@ -26,6 +51,11 @@ $member_id = $_SESSION['member_id'];
 	float: right;
 
 }
+img {
+     height: auto;
+     max-width: 100%;
+ }
+
 </style>
 </head>
 <body>
@@ -51,10 +81,9 @@ $member_id = $_SESSION['member_id'];
 <div id="page"  >
 	<!-- start sidebar -->
 	<div id="sidebarI" >
-	
-	
+
 	<?php
-		include_once('php/root2.php');	
+		include_once('php/root.php');	
 		$query="select subject_id,subject_catalog FROM subject ORDER BY subject_id";
 		$result = $mysqli->query($query);
 		$sum=1;
@@ -62,17 +91,11 @@ $member_id = $_SESSION['member_id'];
 		while($row = $result->fetch_array(MYSQL_ASSOC)){
 		$subject_id = $row['subject_id'];
 		$subject_name = $row['subject_catalog'];
-			/*if($sum==1){
+			if($sum==1){
 				echo "<div class='Class' id='$subject_id' style='background-image:url(images/test/class-up.png);background-size:100%'><table >
-							<tr>
-								<td><img src='images/test/class-pink.png' style='width:18px;margin:0 10px 0 10px;' /></td>
-								
-								<td class='Subject' style='width:180px;'>
-									<div id='$subject_id' class='go_subject'>$subject_name</div>
-								</td>
-							</tr>
+							
 							</table></div>";
-			}*/
+			}
 			echo "<div class='Class' id='$subject_id'><table >
 						<tr>
 							<td><img src='images/test/class-pink.png' style='width:18px;margin:0 10px 0 10px;' /></td>
@@ -83,7 +106,7 @@ $member_id = $_SESSION['member_id'];
 						</tr>
 						</table></div>";
 				
-			//$sum++;
+			$sum++;
 		}
 		echo "<div  ><table >
 					<tr>
@@ -136,7 +159,7 @@ $member_id = $_SESSION['member_id'];
 						}else{
 							$bg_color='#f5e7ea';}
 					echo"<div style='background-image:url(images/test/home-tit.png);background-size:auto 30px;padding:0px 0px 2px 30px;'><h3 >".$subject_name."</h3></div>";
-					echo"<div id='$subject_id ' style='background-color:$bg_color;width: 623px;min-height: 120px;padding: 25px 0px 25px 25px;border-radius:10px;-mos-border-radius:10px;'>";	
+					echo"<div id='$subject_id ' style='background-color:$bg_color;width: 700px;min-height: 120px;padding: 25px 0px 25px 25px;border-radius:10px;-mos-border-radius:10px;'>";	
 					$query3 = "select edit_books.edit_books_id,user_media.user_media_id,user_media.url,user_media.title from edit_books left join user_media on edit_books .user_media_id =  user_media.user_media_id WHERE subject_id='$subject_id' order by edit_books.edit_books_id DESC LIMIT 4";
 					$result3 = $mysqli->query($query3);
 					
@@ -163,11 +186,9 @@ $member_id = $_SESSION['member_id'];
 			}
 		?>
 		</div>
-	
+		<!-- end content -->
 	</div>
 	
-	<!-- end content -->
-
 <!-- end page -->
 <div id="footer">
 	
@@ -183,7 +204,7 @@ $member_id = $_SESSION['member_id'];
 var member_id = "<?php print $_SESSION['member_id']; ?>";
 
 $(function(){  
-	$('a.colorbox').live("mouseover",function(){
+	$('a.colorbox').live("click",function(){
 		$(this).colorbox({href:"index2.php",width:"600", height:"500",iframe:true,slideshow:true});
 	})
 	

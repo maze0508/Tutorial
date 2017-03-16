@@ -21,7 +21,7 @@ a{text-decoration:none};
 </style>
 </head>
 <!----background-color:#d4eaf9;---->
-<body class="loginbody " style="height: 100%;background-size:90%;background-image: url(images/login2.png);background-position:top center;">
+<body class="loginbody " style="background-size:100%;background-image: url(images/login1.jpg);background-position:top center;">
 
 	
 	<div style=" margin-left: 75px; margin-top: 180px;">
