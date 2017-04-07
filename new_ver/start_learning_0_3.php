@@ -12,6 +12,7 @@ echo "<script>document.location.href='index.php'</script>";
 <meta name="description" content="" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="m/js/deviceListener.js"></script>
 <!--[if IE]>
 <style type="text/css">
 #sidebar #calendar {
@@ -77,6 +78,8 @@ background-color:#99C;
 
 	<!-- start content -->
 	<div id="content" style="width:100%">
+        <div class="Tit"><img src="images/test/pic-Tit.png"/>
+            <a href="index.php" title="個人書房">個人書房</a> >> <a href="learning_books_list.php" title="影片">影片</a> >> <a href="#" title="我的收藏">我的收藏</a></div><br/><br/>
 		<div class="post">
 			<div class="entry" >
 			<br/>
@@ -87,13 +90,12 @@ background-color:#99C;
 				<br/>
 				<?php
 				session_start();
-				$query = "SELECT user_media.url,user_media.title,user_media.description,user_media.member_id,subject.subject_catalog,my_favorite.date,edit_books.edit_books_id,edit_books.user_media_id FROM (my_favorite LEFT JOIN edit_books ON my_favorite.edit_books_id=edit_books.edit_books_id) LEFT JOIN user_media ON edit_books.user_media_id=user_media.user_media_id LEFT JOIN subject ON edit_books.subject_id=subject.subject_id WHERE my_favorite.member_id = $member_id ORDER BY my_favorite.date";
+				$query = "SELECT user_media.url,user_media.title,user_media.description,member.name,user_media.member_id,subject.subject_catalog,my_favorite.date,edit_books.edit_books_id,edit_books.user_media_id FROM (my_favorite LEFT JOIN edit_books ON my_favorite.edit_books_id=edit_books.edit_books_id) LEFT JOIN user_media ON edit_books.user_media_id=user_media.user_media_id LEFT JOIN subject ON edit_books.subject_id=subject.subject_id LEFT JOIN member ON user_media.member_id=member.member_id WHERE my_favorite.member_id = $member_id ORDER BY my_favorite.date";
+                
 				$result = $mysqli->query($query);
 				while($row = $result->fetch_array(MYSQL_ASSOC)){
 				   $user_media_id = $row["user_media_id"];
-				   
 					$_SESSION['user_media_id'] = $user_media_id;
-				   
 				   $title = $row["title"];
 				   $edit_books_id = $row["edit_books_id"];
 				   $user_media_member_id = $row["member_id"];				   
@@ -101,24 +103,27 @@ background-color:#99C;
 				   $url = $row["url"];	
 				   $date = $row["date"];	
 				   $description = $row["description"];	
-				   $found = strstr($url,"youtube");					   
+				   $found = strstr($url,"youtube");		
+                    $name = $row["name"];	
+                    if($url){
 				   ($found)? $aimgs = "<img src='' class='youtube imgs' style='width: 120px;' name='$url' align='top' />" : $aimgs = "<img style='width: 120px;' class='imgs' src='user_pics/$url.jpg' align='top' />";
 				   	echo "
 					<div class='temp_movie'>
 						<div style='width:140px;float:left;'>
 							$aimgs
 						</div>
-						<div style='width:100%;'>
+						<div style='width:100%;height:100px;'>
 							<label>【 $subject_catalog 】 <a style='text-decoration: none;' href='start_learning_1.php?user_media_id=$user_media_id&edit_books_id=$edit_books_id'>$title</a></label><br>
 							<label>註記模式：<a style='text-decoration: none;' href='start_learning_1.php?user_media_id=$user_media_id&edit_books_id=$edit_books_id'>文字註記</a><a style='text-decoration: none;' href='start_learning_1_2.php?user_media_id=$user_media_id&edit_books_id=$edit_books_id'>、圖片註記</a></label><br>
-							<label>主題作者：$user_media_member_id</label><br>
+							<label>主題作者：$name</label><br>
 							<label>收藏時間：$date</label><br>
 							<label>學習概念：$description</label>
+                            <br/>
 						</div>
-						<div style='width:100%;height:50px;display:none;overflow:auto'></div>
+						
 					</div>					
 					";
-					
+                    }
 				}
 				mysqli_free_result($result);
 				?>					

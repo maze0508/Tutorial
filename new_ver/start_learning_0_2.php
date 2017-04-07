@@ -12,6 +12,7 @@ echo "<script>document.location.href='index.php'</script>";
 <meta name="description" content="" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="m/js/deviceListener.js"></script>
 <!--[if IE]>
 <style type="text/css">
 #sidebar #calendar {
@@ -30,7 +31,7 @@ padding:3px;
 .imgs{
 border:1px solid;
 padding:2px;
-margin-right:2px
+margin-right:2px;
 width:130px;
 }
 .team{
@@ -77,6 +78,8 @@ background-color:#99C;
 
 	<!-- start content -->
 	<div id="content" style="width:100%">
+        <div class="Tit"><img src="images/test/pic-Tit.png"/>
+            <a href="index.php" title="個人書房">個人書房</a> >> <a href="learning_books_list.php" title="影片">影片</a> >> <a href="#" title="我的學習主題">我的學習主題</a></div><br/><br/>
 		<div class="post">
 			<div class="entry" >
 			<br/>
@@ -110,7 +113,7 @@ background-color:#99C;
 						<div style='width:140px;float:left;'>
 							$aimgs
 						</div>
-						<div style='width:100%;'>
+						<div style='width:100%;height:100px;'>
 							<label>【 $subject_catalog 】 <a style='text-decoration: none;' href='start_learning_1.php?user_media_id=$user_media_id&team_id=$team_id'>$learning_name</a></label><br>
 							<label>註記模式：<a style='text-decoration: none;' href='start_learning_1.php?user_media_id=$user_media_id&team_id=$team_id'>文字註記</a><a style='text-decoration: none;' href='start_learning_1_2.php?user_media_id=$user_media_id&team_id=$team_id'>、圖片註記</a></label><br>
 							<label>主題作者：$name</label><br>

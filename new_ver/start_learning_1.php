@@ -15,6 +15,8 @@ echo "<script>document.location.href='index.php'</script>";
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2/swfobject.js"></script>
+<script type="text/javascript" src="m/js/deviceListener.js"></script>
+
 <!--[if IE]>
 <style type="text/css">
 #sidebar #calendar {
@@ -67,15 +69,12 @@ color:#FFF
 				echo "<script>document.location.href='index.php'</script>";
 				return false;
 				}else{
-				$query = "SELECT identifier.ident_catalog,member.name,source.source_catalog,common.common_account,common.common_unit,common.common_email,user_media.url,user_media.title,user_media.language,user_media.description,user_media.keyword,user_media.coverage,user_media.version,role.role_catalog,user_media.design_date,user_media.cost,user_media.copyright,ccdescript.ccdescript_catalog from user_media left join ccdescript on user_media.ccdescription_id = ccdescript.ccdescript_id left join identifier on user_media.identifier_id = identifier.ident_id left join role on user_media.role_id = role.role_id left join source on user_media.source_id = source.source_id left join common on common.common_id = user_media.common_id left join member on member.member_id = user_media.member_id  where user_media.user_media_id='$user_media_id'  limit 0,1";
+				$query = "SELECT identifier.ident_catalog,member.name,source.source_catalog,user_media.url,user_media.title,user_media.language,user_media.description,user_media.keyword,user_media.coverage,user_media.version,role.role_catalog,user_media.design_date,user_media.cost,user_media.copyright,ccdescript.ccdescript_catalog from user_media left join ccdescript on user_media.ccdescription_id = ccdescript.ccdescript_id left join identifier on user_media.identifier_id = identifier.ident_id left join role on user_media.role_id = role.role_id left join source on user_media.source_id = source.source_id left join member on member.member_id = user_media.member_id  where user_media.user_media_id='$user_media_id'  limit 0,1";
 					$result = $mysqli->query($query);
 					 while($row = $result->fetch_array(MYSQL_ASSOC)){
 					   $url .= $row["url"];			   
 					   $ident_catalog .= $row["ident_catalog"];
 					   $name .= $row["name"];
-					   $common_account .= $row["common_account"];
-					   $common_unit .= $row["common_unit"];
-					   $common_email .= $row["common_email"];
 					   $source_catalog .= $row["source_catalog"];
 					   $title .= $row["title"];
 					   $language .= $row["language"];
