@@ -6,18 +6,19 @@ Released for free under a Creative Commons Attribution 2.5 License
 
 * {
 	background-repeat: no-repeat;
+	
+
 }
 
 body {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 13px;
-	/*background-color: #000;*/
-	/*margin: 0; padding: 0; height: 100%; border:none;*/
-	background: -webkit-linear-gradient(top, #9fd8ef 10%,#bfe8f9 20%,#ffffff 40%,#ffffff 100%);
-	/*background: background-image: url(../images/sea.png);*/
-	background-repeat: no-repeat;
-	
+	background: -webkit-linear-gradient(top,#05abe0 0%,#99dbef 21%,#87e0fd 20%, #e0f5fc 50%);
+	/*background-color: #000;
+	margin: 0; padding: 0; height: 100%; border:none;*/
+
 }
+
 
 h1, h2, h3 {
 	margin-bottom: 1.5em;
@@ -46,15 +47,13 @@ h2 {
 h3 {
 	font-family:微軟正黑體;
 	font-size: 16px;
-	font-weight: bold;
-	color: #4a2c1a;
-	/*color: #939292;*/
+	font-weight: normal;
+	color: #939292;
 }
 
 p, ul, ol {
 	margin-top: 1.5em;
 	line-height: 190%;
-	font-size: xx-small;
 }
 
 ul, ol {
@@ -66,11 +65,6 @@ blockquote {
 	margin-right: 3em;
 }
 
-img {
-     height: auto;
-     max-width: 100%;
- }
-
 a {
 	color: #346086;
 }
@@ -81,9 +75,6 @@ a:hover {
 
 a img {
 	border: none;
-	background-position: center center;
-	text-align: center;
-	margin: auto;
 }
 
 img.left {
@@ -103,14 +94,11 @@ hr {
 /* Logo */
 
 #logo {
-	width: 1024px;
+	width: 960px;
 	height: 135px;
-	background-image: url(../images/sea.jpg);
-	background-position: center center;
-	position: relative;
-	margin-top: auto;
-	margin-right: auto;
-	margin-left: auto;
+	margin: 0 auto;
+	background: url(../images/sea.png);
+	
 }
 
 #logo h1, #logo h2 {
@@ -140,30 +128,27 @@ hr {
 
 }
 #logo1 img {
-	width:150px;
+	width:200px;
 	height:100px;
+
 }
 
 ul#logo1 {
-
-	padding: 2px 0px 0px 20px;
+	margin: 0;
+	padding: 2px 0 0 0px;
 	list-style: none;
 	line-height: normal;
 }
 
 #logo1 li {
 	float: left;
-	padding: 0 20px 0 20px;
+	padding: 0 2px 0 22px;
 
 }
 
 #logo1 li.first {
 	background: none;
 }
-.logo-t {
-	margin-left: 20px;
-}
-
 /* Menu */
 #menu2 img {
 
@@ -184,20 +169,24 @@ ul#menu2 {
 
 }
 #menu2>li>ul{
-	display: none;
+	display:none; 
 	float: left;
+	margin: 0 2px 2px 20px;
+	padding: 2px 0 0 0px;
 	list-style: none;
 	line-height: normal;
-	position: absolute;
-	background: #c2e6fa;
-	font-size: 10px;
-	margin: 0px 2px 0px 20px;
-	padding: 0px 1px 2px 1px;
+	position:absolute; 
+	background:#c2e6fa;
 
 }
 #menu2>li>ul li{
 	display:inline;
 	line-height:30px;
+
+}
+
+}
+
 }
 
 /* Search */
@@ -229,28 +218,32 @@ ul#menu2 {
 /* Banner */
 
 #banner {
-	width: 1024px;
+	width: 960px;
 	margin: 0 auto;
-	padding: 0px 0;
+	padding: 8px 0;
 }
 
 /* Page */
 
 #page {
-	width: 1024px;
-	min-height: 800px;
-	background-color: white;
-	margin: 0 auto 0px auto;
-	padding: 0px 35px 0px 25px;
-
+	width: 900px;
+	background-color: #FFFFFF;
+	margin: 0 auto 500px auto;
+	padding: 45px 35px 45px 25px;
+	
+	/*background-color: #FFF;*/	
+	
+	
 }
+
 /* Content */
 
-#content  {
+#content {
 	float: left;
-	width: 800px;
-}
+	width: 603px;
 
+	
+}
 #content .Tit {
 	font-family:微軟正黑體;
 	float:left;
@@ -262,26 +255,16 @@ ul#menu2 {
 	width: 20px;
 }
 
-#contentI {
-	width: 800px;
-	min-height: 550px;
-	position: relative;
-	margin: auto;
-	padding-left: 222px;
-}
 #contentC {
-	/*float: right;*/
-	float: left;
-	width: 800px;
-	min-height:550px;
-	padding-left:35px;
+	float: right;
+	width: 603px;
 }
 
 #contentC .Note{
 	background-image: url(../images/noteS.png);
 	background-position:left;
 	background-repeat: no-repeat;
-	/*background-color: white;*/
+	background-color: white;
 	font-family:"微軟正黑體";
 	width:170px;
 	height:175px;
@@ -289,10 +272,10 @@ ul#menu2 {
 	table-layout: fixed; 
 	word-wrap: break-word; 
 	overflow: hidden;
-	/*border-left: solid 1px white;
+	border-left: solid 1px white;
 	border-right: solid 1px white;
 	border-top: solid 1px white;
-	border-bottom: solid 1px white;*/
+	border-bottom: solid 1px white;
 	float: left;
 	margin-left: 0.15cm;
 	margin-top:0.2cm;
@@ -301,7 +284,7 @@ ul#menu2 {
 	background-image: url(../images/note2S.png);
 	background-position:left;
 	background-repeat: no-repeat;
-	/*background-color: white;*/
+	background-color: white;
 	font-family:"微軟正黑體";
 	width:170px;
 	height:175px;
@@ -309,10 +292,10 @@ ul#menu2 {
 	table-layout: fixed; 
 	word-wrap: break-word; 
 	overflow: hidden;
-	/*border-left: solid 1px white;
+	border-left: solid 1px white;
 	border-right: solid 1px white;
 	border-top: solid 1px white;
-	border-bottom: solid 1px white;*/
+	border-bottom: solid 1px white;
 	float: left;
 	margin-left: 0.15cm;
 	margin-top:0.2cm;
@@ -320,17 +303,14 @@ ul#menu2 {
 #contentR {
 	margin:0;
 	float: left;
-	width: 800px;
+	width: 960px;
 	min-height: 400px;
 	overflow:hidden;
 	background-repeat:no-repeat;
 	background-position:right bottom;
 	background-size:30%;
-}
-#contentB {
-	float: left;
-	width: 800px;
-
+	
+	 
 	
 }
 .post {
@@ -342,15 +322,12 @@ ul#menu2 {
 }
 
 .post .entry {
-	padding: 0 10px;
-	font-size: small;
-	height: auto;
-	text-align: left;
+	padding: 0 20px;
 	/*background-color: #FFF;*/
 }
 
 .post .meta {
-	height: auto;
+	height: 47px;
 	margin: 20px 0 0 0;
 	padding: 15px 0 0 20px;
 	background: url(../images/img07.gif) no-repeat;
@@ -358,63 +335,28 @@ ul#menu2 {
 }
 
 /* Sidebar */
-#sidebarI {
-	float: left;
-	font-family: 微軟正黑體;
-	color: #777777;
-	width: 200px;
-	margin-left: auto;
-	position: relative;
-}
-
-#sidebarI .Class {
-
-	/*float: left;*/
-	/*border:2px solid #999;*/
-	/*padding:2px;*/
-	/*background-image:url(../images/test/class-line.png);*/
-	/*width: 200px;*/
-	/*text-align:center;*/
-	
-	cursor:pointer;
-	background-position:top ;
-	font-size:24px;
-	font-weight:bold;
-	background-color:#ffffff;
-	
-}
-#sidebarI .Class>table{
-	height:58px;
-	border-bottom:#777 3px dotted;
-}
-
-
 #sidebarC {
 	float: left;
-	/*width: 270px;*/
+	width: 270px;
 }
 
 #sidebarC .Class {
 
-	/*float: left;*/
-	/*border:1px solid #999;*/
+	float: left;
+	border:1px solid #999;
 	cursor:pointer;
-	/*padding:2px;*/
-	width: 180px;
+	padding:2px;
+
+	width: 225px;
 	text-align:center;
-	font-size:28px;
+	font-size:32px;
 	font-weight:bold;
 	
-}
-#sidebarC .Class>table{
-	height:58px;
-
 }
 #sidebarR {
 	position:absolute; 
 	float: right;
 	margin-top:0px;
-	margin-right:40px;
 	right:30%;
 	width: 30px;
 }
@@ -433,16 +375,6 @@ ul#menu2 {
 	font-size:20px;
 	font-weight:bold;
 }
-#sidebarB {
-	float: right;
-	width: 253px;
-	/*overflow:auto;*/
-	/*height:600px;*/
-
-}
-
-
-
 #toolbaox2 tr.lavel1{
 	height: 31px;
 	background-color: #00aad9;
@@ -469,11 +401,8 @@ ul#menu2 {
 	background-color: #8ecbe4;
 }
 #sidebar {
-	float: left;
-	width: 200px;
-	overflow-x:hidden;
-	overflow-y:auto;
-	height:700px;
+	float: right;
+	width: 253px;
 
 }
 
@@ -547,14 +476,15 @@ ul#menu2 {
 /* Footer */
 
 #footer {
-
-	width: 1024px;
+	clear: both;
+	width: 870px;
 	height: 50px;
-	margin: 0 150px 0 150px;
+	margin: 0 auto;
 	padding: 35px 45px;
+	background-color: #FFF;
 	border-top: 1px solid #E5E5E5;
-	position: relative;
 	/*background: url(../images/img05.gif) no-repeat;*/
+	
 }
 
 #footer p {
@@ -583,6 +513,8 @@ ul#menu2 {
 	margin-right: 30%;
 	margin-top: 15%;
 }
+#sealogo {
+}
 
 /*composition*/
 #composition {
@@ -602,19 +534,18 @@ ul#menu2 {
 }
 
 /**/
-
-div#media_class{
-	width:95px;
-	height:120px;
-	float:left;
-	overflow: auto;
-	padding-left:5px;
-	padding-top:5px;
+div.all_useranchor{
+	position:absolute;
+	border:1px solid;
+	width:500px;
+	height:150px;
+	max-height:150px;
+	background-color:#c2e6fa;
+	
 }
-div#media_anchor{
-	width:400px;
+div#media_class{
 	height:125px;
-	float:left;
+	max-height:125px;
 	overflow: auto;
 
 }
@@ -643,388 +574,4 @@ table.sign td.title {
 	border-radius:10px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
-}
-
-
-div#Edit.mesh>div{
-z-index: 2; 
-background-color: white;
-}
-
-div.all_useranchor{
-	position:absolute;
-	border:1px solid;
-	width:500px;
-	height:150px;
-	max-height:150px;
-	background-color:#c2e6fa;
-	z-index:3;
-	
-}
-/*div#Edit.hie div.descript_choose{
-border-bottom:1px solid;
-height:30px;
-width:145px;
-}*/
-.temp_movie img{
-	width:120px
-}
-#page #content .post .entry #eform #common_info {
-
-}
-
-/* Media Query ，也就是當寬度 < 768 px 時將載入下面這段 CSS :*/
-@media only screen and (max-width: 768px) {
-
-div#media_class{
-	width:95px;
-	height:120px;
-	float:left;
-}
-div#media_anchor{
-	width:200px;
-	height:125px;
-	float:left;
-
-}
-#logo {
-	width: 700px;
-	height: 135px;
-	background-image: url(../images/sea.jpg);
-	background-position: center center;
-	position: relative;
-	margin-top: auto;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-}
-#logo1 img {
-	width:100px;
-	height:50px;
-}
-
-/* Menu */
-#menu2 img {
-
-	height:70px;
-
-}
-
-ul#menu2 {
-	margin: 0;
-	padding: 2px 0 0 0px;
-	list-style: none;
-	line-height: normal;
-}
-
-#menu2>li {
-	float: left;
-	padding: 20px 0 0 0;
-
-}
-#menu2>li>ul{
-	display: none;
-	float: left;
-	list-style: none;
-	line-height: normal;
-	position: absolute;
-	background: #c2e6fa;
-	font-size: 10px;
-	margin: 0px 2px 0px 20px;
-	padding: 0px 1px 2px 1px;
-
-}
-#menu2>li>ul li{
-	display:inline;
-	line-height:30px;
-}
-/* Banner */
-
-#banner {
-	width: 700px;
-	margin: 0 auto;
-	padding: 0px 0;
-}
-
-/* Page */
-
-#page {
-	width: 500px;
-	min-height: 800px;
-	background-color: white;
-	padding: 0px 0;
-
-}
-/* Content */
-
-#content  {
-	float: left;
-	width: 700px;
-}
-
-
-#contentI {
-	width: 500px;
-	min-height: 550px;
-	position: relative;
-	margin: auto;
-}
-#contentC {
-	/*float: right;*/
-	float: left;
-	width:200px;
-	min-height:550px;
-}
-#footer {
-
-	width: 500px;
-	height: 20px;
-}
-}
-
-/* Media Query ，也就是當寬度 < 480 px 時將載入下面這段 CSS :*/
- @media only screen and (max-width: 480px) {
-  div#media_class{
-	width:95px;
-	height:120px;
-	float:left;
-}
-div#media_anchor{
-	width:200px;
-	height:125px;
-	float:left;
-
-}
-#logo {
-	width: 400px;
-	height: 135px;
-	background-image: url(../images/sea.jpg);
-	background-position: center center;
-	position: relative;
-	margin-top: auto;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-
-#logo a {
-	text-decoration: none;
-	font-size: 14px;
-	font-weight: bold;
-
-}
-#logo1 img {
-	width:100px;
-	height:50px;
-}
-
-/* Menu */
-#menu2 img {
-
-	height:70px;
-
-}
-
-ul#menu2 {
-	margin: 0;
-	padding: 2px 0 0 0px;
-	list-style: none;
-	line-height: normal;
-}
-
-#menu2>li {
-	float: left;
-	padding: 20px 0 0 0;
-
-}
-#menu2>li>ul{
-	display: none;
-	float: left;
-	list-style: none;
-	line-height: normal;
-	position: absolute;
-	background: #c2e6fa;
-	font-size: 10px;
-	margin: 0px 2px 0px 20px;
-	padding: 0px 1px 2px 1px;
-
-}
-#menu2>li>ul li{
-	display:inline;
-	line-height:30px;
-}
-#sidebar {
-	float: left;
-	font-family: 微軟正黑體;
-	color: #777777;
-	width: 100px;
-	position: relative;
-}
-
-/* Banner */
-
-#banner {
-	width: 400px;
-	margin: 0 auto;
-	padding: 0px 0;
-}
-
-/* Page */
-
-#page {
-	width: 200px;
-	min-height: 800px;
-	background-color: white;
-	padding: 0px 0;
-
-}
-/* Content */
-
-#content  {
-	float: left;
-	width: 400px;
-}
-
-
-#contentI {
-	width: 200px;
-	min-height: 550px;
-	position: relative;
-	margin: auto;
-}
-#contentC {
-	/*float: right;*/
-	float: left;
-	width:100px;
-	min-height:550px;
-}
-#footer {
-
-	width: 200px;
-	height: 20px;
-}
-}
-
-/* Media Query ，也就是當寬度 < 320 px 時將載入下面這段 CSS :*/
- @media only screen and (max-width: 320px) {
-   div#media_class{
-	width:95px;
-	height:120px;
-	float:left;
-}
-div#media_anchor{
-	width:200px;
-	height:125px;
-	float:left;
-
-}
-#logo {
-	width: 300px;
-	height: 135px;
-	background-image: url(../images/sea.jpg);
-	background-position: center center;
-	position: relative;
-	margin-top: auto;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-
-#logo a {
-	text-decoration: none;
-	font-size: 14px;
-	font-weight: bold;
-
-}
-#logo1 img {
-	width:100px;
-	height:50px;
-}
-
-/* Menu */
-#menu2 img {
-
-	height:70px;
-
-}
-
-ul#menu2 {
-	margin: 0;
-	padding: 2px 0 0 0px;
-	list-style: none;
-	line-height: normal;
-}
-
-#menu2>li {
-	float: left;
-	padding: 20px 0 0 0;
-
-}
-#menu2>li>ul{
-	display: none;
-	float: left;
-	list-style: none;
-	line-height: normal;
-	position: absolute;
-	background: #c2e6fa;
-	font-size: 10px;
-	margin: 0px 2px 0px 20px;
-	padding: 0px 1px 2px 1px;
-
-}
-#menu2>li>ul li{
-	display:inline;
-	line-height:30px;
-}
-#sidebar {
-	float: left;
-	font-family: 微軟正黑體;
-	color: #777777;
-	width: 100px;
-	position: relative;
-}
-
-/* Banner */
-
-#banner {
-	width: 300px;
-	margin: 0 auto;
-	padding: 0px 0;
-}
-
-/* Page */
-
-#page {
-	width: 250px;
-	min-height: 800px;
-	background-color: white;
-	padding: 0px 0;
-
-}
-/* Content */
-
-#content  {
-	float: left;
-	width: 300px;
-}
-
-
-#contentI {
-	width: 150px;
-	min-height: 550px;
-	position: relative;
-	margin: auto;
-}
-#contentC {
-	/*float: right;*/
-	float: left;
-	width:100px;
-	min-height:550px;
-}
-#footer {
-
-	width: 150px;
-	height: 20px;
-}
 }
